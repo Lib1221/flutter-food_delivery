@@ -1,41 +1,13 @@
 // ignore_for_file: camel_case_types, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:food_delivry/common.dart';
+import 'package:food_delivry/backend.dart';
 
 int selector_item = 0;
-
-class softDrink {
-  String Name;
-  int Price;
-  String ImageAddress;
-  softDrink(
-      {required this.Name, required this.Price, required this.ImageAddress});
-}
-
-class Pasta {
-  String Name;
-  int Price;
-  String ImageAddress;
-
-  Pasta({required this.Name, required this.Price, required this.ImageAddress});
-}
-
-class PizzaThing {
-  String Name;
-  int Price;
-  String ImageAddress;
-  PizzaThing(
-      {required this.Name, required this.Price, required this.ImageAddress});
-}
-
-class ShiroNegar {
-  String Name;
-  int Price;
-  String ImageAddress;
-  ShiroNegar(
-      {required this.Name, required this.Price, required this.ImageAddress});
-}
+bool softdrinktrue = true;
+bool pizzatrue = false;
+bool pastatrue = false;
+bool shirotrue = false;
 
 class A extends StatefulWidget {
   const A({super.key});
@@ -47,29 +19,16 @@ class A extends StatefulWidget {
 class _AState extends State<A> {
   @override
   Widget build(BuildContext context) {
-    List<softDrink> softDrinkBank = [
-      softDrink(Name: 'coca-cola', Price: 60, ImageAddress: 'assets/coca.png'),
-      softDrink(Name: 'fanta', Price: 60, ImageAddress: 'assets/fanta.png'),
-      softDrink(Name: 'pepsi', Price: 60, ImageAddress: 'assets/pepsi.png'),
-      softDrink(Name: 'sprite', Price: 60, ImageAddress: 'assets/sprite.png'),
-      softDrink(Name: 'Water', Price: 30, ImageAddress: 'assets/water.png'),
-    ];
-
-    List<PizzaThing> pizzaThingBank = [
-      PizzaThing(Name: 'pizza', Price: 330, ImageAddress: 'assets/pizza.png'),
-      PizzaThing(Name: 'burger', Price: 330, ImageAddress: 'assets/burger.png'),
-      PizzaThing(
-          Name: 'Egg - sandwich',
-          Price: 330,
-          ImageAddress: 'assets/eggSandwich.png'),
-    ];
-
-    List nav_items = [
-      softDrinkBank,
-      pizzaThingBank,
-    ];
+    List nav_items = [softDrinkBank, pizzaThingBank, pastaBank, shiroNegarBank];
     value_changer(int num) {
       selector_item = num;
+    }
+
+    navbar_chnager_color(int num) {
+      softdrinktrue = num == 0 ? true : false;
+      pizzatrue = num == 1 ? true : false;
+      pastatrue = num == 2 ? true : false;
+      shirotrue = num == 3 ? true : false;
     }
 
     return Expanded(
@@ -91,35 +50,99 @@ class _AState extends State<A> {
                         Expanded(
                           child: Container(
                             decoration: BoxDecoration(
-                                color: Colors.yellow,
+                                color: const Color.fromARGB(174, 255, 248, 231),
+                                borderRadius: BorderRadius.circular(20)),
+                            child: ElevatedButton(
+                                style: ButtonStyle(
+                                    backgroundColor:
+                                        WidgetStatePropertyAll(softdrinktrue
+                                            ? Colors.amberAccent
+                                            // ignore: dead_code
+                                            : null),
+                                    elevation: WidgetStatePropertyAll(
+                                        // ignore: dead_code
+                                        softdrinktrue ? 10 : 1)),
+                                onPressed: () {
+                                  setState(() {
+                                    value_changer(0);
+                                    navbar_chnager_color(0);
+                                  });
+                                },
+                                child: const Text("SoftDrink")),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20)),
                             child: Center(
                                 child: ElevatedButton(
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        WidgetStatePropertyAll(pizzatrue
+                                            ? Colors.amberAccent
+                                            // ignore: dead_code
+                                            : null),
+                                    elevation: WidgetStatePropertyAll(
+                                        // ignore: dead_code
+                                        pizzatrue ? 10 : 1)),
                                     onPressed: () {
                                       setState(() {
-                                        value_changer(0);
+                                        value_changer(1);
+                                        navbar_chnager_color(1);
                                       });
                                     },
-                                    child: const Text("Pizza"))),
+                                    child: const Text("pizza"))),
                           ),
                         ),
-                        
-                        
                         Expanded(
-      child: Container(
-        decoration: BoxDecoration(
-            color: Colors.yellow, borderRadius: BorderRadius.circular(20)),
-        child: Center(
-            child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
- value_changer(1);                  });
-                },
-                child: const Text("Pizza"))),
-      ),
-    ),
-                        const navbar(),
-                        const navbar(),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Center(
+                                child: ElevatedButton(
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        WidgetStatePropertyAll(pastatrue
+                                            ? Colors.amberAccent
+                                            // ignore: dead_code
+                                            : null),
+                                    elevation: WidgetStatePropertyAll(
+                                        // ignore: dead_code
+                                        pastatrue ? 10 : 1)),
+                                    onPressed: () {
+                                      setState(() {
+                                        value_changer(2);
+                                        navbar_chnager_color(2);
+                                      });
+                                    },
+                                    child: const Text("pasta"))),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Center(
+                                child: ElevatedButton(
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        WidgetStatePropertyAll(shirotrue
+                                            ? Colors.amberAccent
+                                            // ignore: dead_code
+                                            : null),
+                                    elevation: WidgetStatePropertyAll(
+                                        // ignore: dead_code
+                                        shirotrue ? 10 : 1)),
+                                    onPressed: () {
+                                      setState(() {
+                                        value_changer(3);
+                                        navbar_chnager_color(3);
+                                      });
+                                    },
+                                    child: const Text("Shiro"))),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -184,14 +207,15 @@ class _AState extends State<A> {
                                                   style: const TextStyle(
                                                     color: Colors.black87,
                                                     fontSize: 23,
-                                                    fontWeight:
-                                                        FontWeight.bold,
+                                                    fontWeight: FontWeight.bold,
                                                   ),
                                                 ),
                                               ),
-                                              const Text(
-                                                "300-birr",
-                                                style: TextStyle(
+                                              Text(
+                                                nav_items[selector_item][index]
+                                                    .Price
+                                                    .toString(),
+                                                style: const TextStyle(
                                                   color: Colors.black54,
                                                   fontSize: 20,
                                                 ),
