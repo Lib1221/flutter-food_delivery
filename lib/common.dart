@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivry/container.dart';
 
 class navbar extends StatefulWidget {
   const navbar({super.key});
@@ -8,6 +9,8 @@ class navbar extends StatefulWidget {
 }
 
 class _navbarState extends State<navbar> {
+  
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -15,7 +18,13 @@ class _navbarState extends State<navbar> {
         decoration: BoxDecoration(
             color: Colors.yellow, borderRadius: BorderRadius.circular(20)),
         child: Center(
-            child: ElevatedButton(onPressed: () {}, child: Text("Pizza"))),
+            child: ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    selector_item = 0;
+                  });
+                },
+                child: const Text("Pizza"))),
       ),
     );
   }
@@ -65,8 +74,6 @@ class _bottomBarState extends State<bottomBar> {
   }
 }
 
-
-
 class bottommenu extends StatefulWidget {
   const bottommenu({super.key});
 
@@ -78,33 +85,33 @@ class _bottommenuState extends State<bottommenu> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-  backgroundColor: Colors.red[100], // A softer, lighter shade of red for the background
-  selectedItemColor: const Color.fromARGB(255, 204, 6, 6), // White color for selected items
-  unselectedItemColor: Colors.black87, // Darker color for unselected items
-  items: const [
-    BottomNavigationBarItem(
-      icon: Icon(Icons.home),
-      label: 'Home',
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.search),
-      label: 'Search',
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.account_circle),
-      label: 'Profile',
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.location_on),
-      label: 'map',
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.history),
-      label: 'history',
-    ),
-  ],
-)
-
-;
+      backgroundColor:
+          Colors.red[100], // A softer, lighter shade of red for the background
+      selectedItemColor: const Color.fromARGB(
+          255, 204, 6, 6), // White color for selected items
+      unselectedItemColor: Colors.black87, // Darker color for unselected items
+      items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.search),
+          label: 'Search',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.account_circle),
+          label: 'Profile',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.location_on),
+          label: 'map',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.history),
+          label: 'history',
+        ),
+      ],
+    );
   }
 }

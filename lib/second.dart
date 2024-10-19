@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivry/a.dart';
 import 'package:food_delivry/container.dart';
 import 'package:food_delivry/common.dart';
 import 'package:lottie/lottie.dart';
@@ -47,39 +48,9 @@ class _homepageState extends State<homepage> {
         ),
       ),
               )),
-          Expanded(
-              flex: 8,
-              child: Container(
-                color: Color(0xFFFFF8E7),
-                child: const Column(
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: SizedBox(
-                        height: 30,
-                        child: Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              navbar(),
-                              navbar(),
-                              navbar(),
-                              navbar(),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                        flex: 9,
-                        child: MyWidget(),
-                        )
-                  ],
-                ),
-              )),
-          bottommenu()
+              const A()
+          ,
+          const bottommenu()
         ],
       ),
     );
