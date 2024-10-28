@@ -1,117 +1,99 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivry/container.dart';
+import 'package:flutter/services.dart';
+import 'package:food_delivry/map.dart';
+import 'package:food_delivry/second.dart';
 
-class navbar extends StatefulWidget {
-  const navbar({super.key});
+class ButtonNavBar3 extends StatefulWidget {
+  const ButtonNavBar3({super.key});
 
   @override
-  State<navbar> createState() => _navbarState();
+  ButtonNavBar3State createState() => ButtonNavBar3State();
 }
 
-class _navbarState extends State<navbar> {
-  
+class ButtonNavBar3State extends State<ButtonNavBar3> {
+  var currentIndex = 0;
+
+  // List of pages corresponding to each icon
+  final List<Widget> pages = [
+    const homepage(),
+    const deliveryRoute()
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        decoration: BoxDecoration(
-            color: Colors.yellow, borderRadius: BorderRadius.circular(20)),
-        child: Center(
-            child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    selector_item = 0;
-                  });
-                },
-                child: const Text("Pizza"))),
-      ),
-    );
-  }
-}
-
-class bottomBar extends StatefulWidget {
-  const bottomBar({super.key});
-
-  @override
-  State<bottomBar> createState() => _bottomBarState();
-}
-
-class _bottomBarState extends State<bottomBar> {
-  @override
-  Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    
     return Container(
-      color: Colors.black,
-      padding: const EdgeInsets.all(5),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/home');
+        margin: const EdgeInsets.all(20),
+        height: screenWidth * .155,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(.15),
+              blurRadius: 30,
+              offset: const Offset(0, 10),
+            ),
+          ],
+          borderRadius: BorderRadius.circular(50),
+        ),
+        child: ListView.builder(
+          itemCount: listOfIcons.length, // Use listOfIcons length for item count
+          scrollDirection: Axis.horizontal,
+          padding: EdgeInsets.symmetric(horizontal: screenWidth * .024),
+          itemBuilder: (context, index) => InkWell(
+            onTap: () {
+              setState(() {
+                currentIndex = index; // Update current index
+                HapticFeedback.lightImpact();
+              });
+               Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => pages[index]),
+            );
             },
-            child: const Icon(Icons.home),
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            child: Stack(
+              children: [
+                SizedBox(
+                  width: screenWidth * .2125,
+                  child: Center(
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 300), // Shorter duration for smoother animation
+                      curve: Curves.fastLinearToSlowEaseIn,
+                      height: index == currentIndex ? screenWidth * .12 : 0,
+                      width: index == currentIndex ? screenWidth * .2125 : 0,
+                      decoration: BoxDecoration(
+                        color:
+                            index == currentIndex ? Colors.blueAccent.withOpacity(.2) : Colors.transparent,
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: screenWidth * .2125,
+                  alignment: Alignment.center,
+                  child: Icon(
+                    listOfIcons[index],
+                    size: screenWidth * .076,
+                    color:
+                        index == currentIndex ? Colors.blueAccent : Colors.black26, // Change color based on selection
+                  ),
+                ),
+              ],
+            ),
           ),
-          FloatingActionButton(
-            onPressed: () {},
-            child: const Icon(Icons.maps_ugc_rounded),
-          ),
-          FloatingActionButton(
-            onPressed: () {},
-            child: const Icon(Icons.store_mall_directory_outlined),
-          ),
-          FloatingActionButton(
-            onPressed: () {},
-            child: const Icon(Icons.location_on_outlined),
-          ),
-          FloatingActionButton(
-            onPressed: () {},
-            child: const Icon(Icons.history),
-          ),
-        ],
-      ),
-    );
+        ),
+      );
   }
+
+  List<IconData> listOfIcons = [
+    Icons.home_rounded,
+    Icons.favorite_rounded,
+    Icons.settings_rounded,
+    Icons.person_rounded,
+  ];
 }
 
-class bottommenu extends StatefulWidget {
-  const bottommenu({super.key});
-
-  @override
-  State<bottommenu> createState() => _bottommenuState();
-}
-
-class _bottommenuState extends State<bottommenu> {
-  @override
-  Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      backgroundColor:
-          Colors.red[100], // A softer, lighter shade of red for the background
-      selectedItemColor: const Color.fromARGB(
-          255, 204, 6, 6), // White color for selected items
-      unselectedItemColor: Colors.black87, // Darker color for unselected items
-      items: const [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.search),
-          label: 'Search',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.account_circle),
-          label: 'Profile',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.location_on),
-          label: 'map',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.history),
-          label: 'history',
-        ),
-      ],
-    );
-  }
-}

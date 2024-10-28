@@ -54,6 +54,7 @@ class _AState extends State<A> {
                                 borderRadius: BorderRadius.circular(20)),
                             child: ElevatedButton(
                                 style: ButtonStyle(
+                                  
                                     backgroundColor:
                                         WidgetStatePropertyAll(softdrinktrue
                                             ? Colors.amberAccent
