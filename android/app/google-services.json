@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "245496442140",
+    "project_id": "mesobexpress-49e5d",
+    "storage_bucket": "mesobexpress-49e5d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245496442140:android:381b19ab4639c3ae0a1ed9",
+        "android_client_info": {
+          "package_name": "com.example.check"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "245496442140-khf1qs2vcgse9hmmj3pipv3cbmeqp7vm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7R6ZH-ZZ88R_cpUwYj12yykEWJB0pmUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "245496442140-khf1qs2vcgse9hmmj3pipv3cbmeqp7vm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "245496442140-3l58la26q93u4b7hi5v7lfbop5n5cbgq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mesob"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245496442140:android:4157df75ba45e6800a1ed9",
+        "android_client_info": {
+          "package_name": "com.mesobexpress.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "245496442140-khf1qs2vcgse9hmmj3pipv3cbmeqp7vm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7R6ZH-ZZ88R_cpUwYj12yykEWJB0pmUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "245496442140-khf1qs2vcgse9hmmj3pipv3cbmeqp7vm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "245496442140-3l58la26q93u4b7hi5v7lfbop5n5cbgq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mesob"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
