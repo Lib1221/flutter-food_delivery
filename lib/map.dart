@@ -31,7 +31,7 @@ class _deliveryRoutestate extends State<deliveryRoute> {
 
   // Fetch the current location and route data from OSRM
   Future<void> _fetchCurrentLocationAndRoute() async {
-    final startLatLng = const LatLng(8.5769, 39.2906); // Start location
+    final startLatLng = const LatLng(9.00137, 38.765821); // Start location
 
     // Get the current location
     Position position = await _getCurrentLocation();
@@ -101,6 +101,7 @@ class _deliveryRoutestate extends State<deliveryRoute> {
 
   @override
   Widget build(BuildContext context) {
+
     return currentLocation == null
         ? Loading()
         : Scaffold(
@@ -131,11 +132,11 @@ class _deliveryRoutestate extends State<deliveryRoute> {
                       ),
                     ),
                     const Marker(
-                      point: LatLng(8.5769, 39.2906),
+                      point: LatLng(9.00137, 38.765821),
                       width: 100,
                       height: 100,
                       child: Icon(
-                        Icons.location_pin,
+                        Icons.food_bank_outlined,
                         color: Color.fromARGB(255, 255, 18, 2),
                       ),
                     ),
