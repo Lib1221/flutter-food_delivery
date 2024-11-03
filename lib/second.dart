@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types
 
+import 'package:check/cart/cart.dart';
 import 'package:check/common.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -60,6 +61,16 @@ class _homepageState extends State<homepage> {
         ],
       ),
       bottomNavigationBar: const ButtonNavBar3(),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const Carts()),
+          );
+      },
+      child: const Icon(Icons.shopping_cart_outlined),
+      
+      
+      ),
     );
   }
 }
