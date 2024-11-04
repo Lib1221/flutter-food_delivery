@@ -345,4 +345,3 @@ class Cart_instances {
     };
   }
 }
-
