@@ -1,4 +1,4 @@
-// ignore_for_file: use_super_parameters, non_constant_identifier_names
+// ignore_for_file: use_super_parameters, non_constant_identifier_names, camel_case_types, avoid_print
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -24,12 +24,54 @@ class A extends StatefulWidget {
 }
 
 class _AState extends State<A> {
-  CollectionReference _db =
-      FirebaseFirestore.instance.collection(nav_items[0]);
+  CollectionReference _db = FirebaseFirestore.instance.collection(nav_items[0]);
+
+  CollectionReference cart = FirebaseFirestore.instance.collection('cart');
+
+// Function to get the document ID from the cart based on item name
+
+
+
+  Future<void> getCartItemIdByName(String itemName, int new_amount) async {
+    try {
+      QuerySnapshot cartSnapshot = await FirebaseFirestore.instance
+          .collection('cart')
+          .where('Name', isEqualTo: itemName)
+          .get();
+
+      if (cartSnapshot.docs.isNotEmpty) {
+        cart.doc(cartSnapshot.docs.first.id).update({
+          'Amount': new_amount,
+        });
+      }
+    } catch (e) {
+      print("$e");
+    }
+  }
+
+  Future<void> removeCardByName(String itemName) async {
+    try {
+      QuerySnapshot cartSnapshot = await FirebaseFirestore.instance
+          .collection('cart')
+          .where('Name', isEqualTo: itemName)
+          .get();
+
+      if (cartSnapshot.docs.isNotEmpty) {
+        cart.doc(cartSnapshot.docs.first.id).delete();
+      }
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
   void _incrementCounter(String docId) {
     _db.doc(docId).update({
       'Amount': FieldValue.increment(1),
     });
+  }
+
+  void remove_cart(String docId) {
+    cart.doc(docId).delete();
   }
 
   void updateValueToZero(String docId) {
@@ -40,10 +82,11 @@ class _AState extends State<A> {
   void value_changer(int num) {
     setState(() {
       selector_item = num;
-      _db =FirebaseFirestore.instance.collection(nav_items[num]);
+      _db = FirebaseFirestore.instance.collection(nav_items[num]);
     });
   }
 
+  Future Adding_cart() async {}
   int Number = 0;
   // Function to change the navbar color based on selection
   void navbar_chnager_color(int num) {
@@ -177,6 +220,20 @@ class _AState extends State<A> {
                                   children: [
                                     IconButton(
                                       onPressed: () {
+                                        if (doc['Amount'] == 0) {
+                                          List<Cart_instances> adding = [
+                                            Cart_instances(
+                                                Name: doc['Name'],
+                                                Price: doc['Price'],
+                                                ImageAddress:
+                                                    doc['ImageAddress'],
+                                                Amount: doc['Amount'] + 1)
+                                          ];
+                                          cart.add(adding[0].toJson());
+                                        } else {
+                                          getCartItemIdByName(
+                                              doc['Name'], doc['Amount'] + 1);
+                                        }
                                         _incrementCounter(doc.id);
                                       },
                                       iconSize: 40,
@@ -186,6 +243,7 @@ class _AState extends State<A> {
                                     IconButton(
                                       onPressed: () {
                                         updateValueToZero(doc.id);
+                                        removeCardByName(doc['Name']);
                                       },
                                       iconSize: 40,
                                       icon: const Icon(
@@ -265,5 +323,25 @@ class FoodSelectionRow extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class Cart_instances {
+  String Name;
+  int Price;
+  String ImageAddress;
+  int Amount;
+  Cart_instances(
+      {required this.Name,
+      required this.Price,
+      required this.ImageAddress,
+      required this.Amount});
+  toJson() {
+    return {
+      "Name": Name,
+      "Price": Price,
+      "ImageAddress": ImageAddress,
+      "Amount": Amount
+    };
   }
 }

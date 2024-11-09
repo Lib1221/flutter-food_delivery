@@ -1,10 +1,10 @@
+import 'package:check/Authservice/welcome/components/background.dart';
+import 'package:check/Authservice/welcome/responsive.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:check/second.dart';
 import 'package:provider/provider.dart';
 
-import '../../components/background.dart';
-import '../../responsive.dart';
 import 'components/login_signup_btn.dart';
 import 'components/welcome_image.dart';
 

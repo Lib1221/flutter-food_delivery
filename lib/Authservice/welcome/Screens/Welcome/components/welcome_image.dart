@@ -1,7 +1,7 @@
+import 'package:check/Authservice/welcome/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../constants.dart';
 
 class WelcomeImage extends StatelessWidget {
   const WelcomeImage({

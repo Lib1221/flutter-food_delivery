@@ -1,8 +1,8 @@
+import 'package:check/Authservice/welcome/Screens/Login/login_screen.dart';
+import 'package:check/Authservice/welcome/Screens/Signup/signup_screen.dart';
+import 'package:check/Authservice/welcome/constants.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
-import '../../Login/login_screen.dart';
-import '../../Signup/signup_screen.dart';
 
 class LoginAndSignupBtn extends StatelessWidget {
   const LoginAndSignupBtn({

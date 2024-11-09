@@ -1,12 +1,11 @@
 // ignore_for_file: must_be_immutable, prefer_const_constructors
 
+import 'package:check/Authservice/auth.dart';
+import 'package:check/Authservice/shared/loading.dart';
+import 'package:check/Authservice/welcome/Screens/Login/login_screen.dart';
+import 'package:check/Authservice/welcome/components/already_have_an_account_acheck.dart';
+import 'package:check/Authservice/welcome/constants.dart';
 import 'package:flutter/material.dart';
-import '../../../../auth.dart';
-import '../../Login/login_screen.dart';
-import '../../../components/already_have_an_account_acheck.dart';
-import '../../../constants.dart';
-
-import '../../../../shared/loading.dart';
 
 class SignupForm extends StatefulWidget {
   SignupForm({super.key});

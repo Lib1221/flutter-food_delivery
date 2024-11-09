@@ -1,13 +1,11 @@
 // ignore_for_file: avoid_unnecessary_containers
 
+import 'package:check/Authservice/auth.dart';
+import 'package:check/Authservice/shared/loading.dart';
+import 'package:check/Authservice/welcome/Screens/Signup/signup_screen.dart';
+import 'package:check/Authservice/welcome/components/already_have_an_account_acheck.dart';
+import 'package:check/Authservice/welcome/constants.dart';
 import 'package:flutter/material.dart';
-import '../../../../auth.dart';
-import '../../../../shared/loading.dart';
-
-
-import '../../../components/already_have_an_account_acheck.dart';
-import '../../../constants.dart';
-import '../../Signup/signup_screen.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});

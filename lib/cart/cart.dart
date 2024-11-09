@@ -1,3 +1,6 @@
+// ignore_for_file: avoid_types_as_parameter_names
+
+import 'package:check/payment/pay.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -9,30 +12,48 @@ class Carts extends StatefulWidget {
 }
 
 class _CartsState extends State<Carts> {
-  final CollectionReference _db =
-      FirebaseFirestore.instance.collection('pizzaThingBank');
+  final CollectionReference cart =
+      FirebaseFirestore.instance.collection('cart');
+  void incrementCounter(String docId) {
+    cart.doc(docId).update({
+      'Amount': FieldValue.increment(1),
+    });
+  }
+
+  void removeCard(String docId) {
+    cart.doc(docId).delete();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Your Cart'),
+        centerTitle: true,
+        elevation: 10,
+        backgroundColor: Colors.blue[800],
+
+      ),
       body: SafeArea(
         child: StreamBuilder<QuerySnapshot>(
-          stream: _db.snapshots(),
+          stream: cart.snapshots(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
               return const Center(child: CircularProgressIndicator());
             }
-              
+
             // Filter documents where Amount > 0
-            final filteredDocs = snapshot.data!.docs.where((doc) => doc['Amount'] > 0).toList();
-              
+            final filteredDocs =
+                snapshot.data!.docs.where((doc) => doc['Amount'] > 0).toList();
+
             if (filteredDocs.isEmpty) {
               return const Center(child: Text("No items in cart"));
             }
-              
+
             // Calculate total amount
-            double totalAmount = filteredDocs.fold(0, (sum, doc) => sum + (doc['Price'] * doc['Amount']));
-              
+            double totalAmount = filteredDocs.fold(
+                0, (sum, doc) => sum + (doc['Price'] * doc['Amount']));
+
             return Column(
               children: [
                 Expanded(
@@ -41,10 +62,12 @@ class _CartsState extends State<Carts> {
                       return Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15),
-                          side: const BorderSide(color: Colors.redAccent, width: 1.5),
+                          side: const BorderSide(
+                              color: Colors.redAccent, width: 1.5),
                         ),
                         elevation: 5,
-                        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 15),
                         color: const Color(0xFFFFF8E7),
                         child: Container(
                           padding: const EdgeInsets.all(10),
@@ -64,20 +87,23 @@ class _CartsState extends State<Carts> {
                                 Expanded(
                                   flex: 3,
                                   child: Container(
-                                    padding:
-                                        const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 10, horizontal: 15),
                                     margin: const EdgeInsets.only(left: 10),
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
                                       color: Colors.white,
                                     ),
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         TextButton(
                                           onPressed: () {
-                                            Navigator.pushNamed(context, '/detailview');
+                                            Navigator.pushNamed(
+                                                context, '/detailview');
                                           },
                                           child: Text(
                                             doc['Name'],
@@ -90,37 +116,37 @@ class _CartsState extends State<Carts> {
                                         ),
                                         Text(
                                           '\$${doc['Price'].toString()}',
-                                          style:
-                                              const TextStyle(color: Colors.black54, fontSize: 18),
+                                          style: const TextStyle(
+                                              color: Colors.black54,
+                                              fontSize: 18),
                                         ),
                                       ],
                                     ),
                                   ),
                                 ),
-                                Center(child:
-                                    Text(doc['Amount'].toString(), style:
-                                    const TextStyle(color:
-                                    Colors.black54, fontSize:
-                                    18))),
+                                Center(
+                                    child: Text(doc['Amount'].toString(),
+                                        style: const TextStyle(
+                                            color: Colors.black54,
+                                            fontSize: 18))),
                                 Column(
                                   children: [
                                     IconButton(
                                       onPressed: () {
-                                        // Increment logic here
+                                        incrementCounter(doc.id);
                                       },
                                       iconSize: 40,
-                                      icon:
-                                          const Icon(Icons.add_box_outlined, color:
-                                          Colors.black),
+                                      icon: const Icon(Icons.add,
+                                          color: Colors.black),
                                     ),
                                     IconButton(
                                       onPressed: () {
-                                        // Reset logic here
+                                        removeCard(doc.id);
                                       },
                                       iconSize: 40,
-                                      icon:
-                                          const Icon(Icons.restart_alt_outlined, color:
-                                          Colors.black),
+                                      icon: const Icon(Icons.delete_forever,
+                                          color:
+                                              Color.fromARGB(255, 251, 0, 0)),
                                     )
                                   ],
                                 )
@@ -132,23 +158,21 @@ class _CartsState extends State<Carts> {
                     }).toList(),
                   ),
                 ),
-
                 Padding(
-                  padding:
-                      const EdgeInsets.all(16.0),
-                  child:
-                      Row(mainAxisAlignment:
-                      MainAxisAlignment.spaceBetween,
-                          children:[
-                            const Text("Total Amount:",
-                                style:
-                                TextStyle(fontSize:
-                                20)),
-                            Text("\$${totalAmount.toStringAsFixed(2)}",
-                                style:
-                                const TextStyle(fontSize:
-                                20)),
-                          ]),
+                  padding: const EdgeInsets.all(16.0),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text("Total Amount:",
+                            style: TextStyle(fontSize: 20)),
+                        Text("\$${totalAmount.toStringAsFixed(2)}",
+                            style: const TextStyle(fontSize: 20)),
+
+                        TextButton(onPressed: (){
+                          Stripeservice.instance.makePayment(totalAmount.round());
+
+                        }, child: const Text("Order Now"))
+                      ]),
                 )
               ],
             );

@@ -62,6 +62,11 @@ flutter {
     source = "../.."
 }
 
+dependencies {  
+implementation 'androidx.appcompat:appcompat:1.5.1' // or the latest version
+    // Other dependencies  
+    implementation 'com.stripe:stripe-android:20.48.0' // Add this line  
+}
 
 
-dependencies {}
+

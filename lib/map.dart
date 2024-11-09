@@ -144,7 +144,7 @@ class _deliveryRoutestate extends State<deliveryRoute> {
                 ),
               ],
             ),
-            bottomNavigationBar: ButtonNavBar3(),
+            floatingActionButton: ButtonNavBar3(),
 
           )
           

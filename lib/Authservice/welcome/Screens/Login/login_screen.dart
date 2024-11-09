@@ -2,10 +2,9 @@
 
 // ignore_for_file: must_be_immutable, use_super_parameters
 
+import 'package:check/Authservice/welcome/components/background.dart';
+import 'package:check/Authservice/welcome/responsive.dart';
 import 'package:flutter/widgets.dart';
-import '../../responsive.dart';
-
-import '../../components/background.dart';
 import 'components/login_form.dart';
 import 'components/login_screen_top_image.dart';
 

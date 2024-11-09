@@ -1,9 +1,9 @@
+import 'package:check/Authservice/welcome/components/background.dart';
+import 'package:check/Authservice/welcome/constants.dart';
+import 'package:check/Authservice/welcome/responsive.dart';
 import 'package:flutter/material.dart';
 import 'components/signup_form.dart';
 import 'components/socal_sign_up.dart';
-import '../../constants.dart';
-import '../../responsive.dart';
-import '../../components/background.dart';
 import 'components/sign_up_top_image.dart';
 
 class SignUpScreen extends StatelessWidget {

@@ -6,22 +6,21 @@ import 'package:check/Authservice/welcome/constants.dart';
 import 'package:check/Authservice/wrapper.dart';
 import 'package:check/firebase_options.dart';
 import 'package:provider/provider.dart';
-
 import 'Authservice/auth.dart';
 
 void main() async {
- 
-  WidgetsFlutterBinding.ensureInitialized();
+    WidgetsFlutterBinding.ensureInitialized();
+
+  
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-);
+  );
+  //await setup();
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: MyApp(),
   ));
 }
-
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -39,7 +38,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 
 class MyApp2 extends StatelessWidget {
   const MyApp2({super.key});
