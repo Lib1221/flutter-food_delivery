@@ -6,14 +6,14 @@ import 'package:lottie/lottie.dart';
 import 'Authservice/auth.dart';
 import 'a.dart';
 
-class homepage extends StatefulWidget {
-  const homepage({super.key});
+class homepageScreening extends StatefulWidget {
+  const homepageScreening({super.key});
 
   @override
-  State<homepage> createState() => _homepageState();
+  State<homepageScreening> createState() => homepageScreenState();
 }
 
-class _homepageState extends State<homepage> {
+class homepageScreenState extends State<homepageScreening> {
   AuthService signout = AuthService();
   @override
   Widget build(BuildContext context) {
@@ -21,24 +21,26 @@ class _homepageState extends State<homepage> {
       backgroundColor:Colors.orange[400],
       appBar: AppBar(
         elevation: 4,
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.transparent,
         title: const Text('MesobXpress',
             style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Colors.white)),
+                color: Colors.black)),
         actions: [
           Padding(
             padding: const EdgeInsets.all(10),
-            child: IconButton(
-              icon: const Icon(
-                Icons.arrow_circle_right,
-                size: 50,
-                color: Colors.cyan,
+            child: Center(
+              child: IconButton(
+                icon: const Icon(
+                  Icons.logout_sharp,
+                  size: 40,
+                  color: Colors.black,
+                ),
+                onPressed: () async {
+                  await signout.signOut();
+                },
               ),
-              onPressed: () async {
-                await signout.signOut();
-              },
             ),
           )
         ],
@@ -63,7 +65,6 @@ class _homepageState extends State<homepage> {
         ],
         
       ),
-      floatingActionButton: ButtonNavBar3(),
    
       
     );

@@ -1,3 +1,5 @@
+import 'package:check/payment/pay.dart';
+import 'package:check/splashScreen/splashscreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,7 @@ void main() async {
   //await setup();
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: MyApp(),
+    home: Splash(),
   ));
 }
 
@@ -55,7 +57,7 @@ class MyApp2 extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               elevation: 0,
               foregroundColor: Colors.white,
-              backgroundColor: kPrimaryColor,
+              backgroundColor: const Color(0xFF6F35A5),
               shape: const StadiumBorder(),
               maximumSize: const Size(double.infinity, 56),
               minimumSize: const Size(double.infinity, 56),
@@ -63,8 +65,8 @@ class MyApp2 extends StatelessWidget {
           ),
           inputDecorationTheme: const InputDecorationTheme(
             filled: true,
-            fillColor: kPrimaryLightColor,
-            iconColor: kPrimaryColor,
+            fillColor: Color(0xFFF1E6FF),
+            iconColor: Color.fromRGBO(111, 53, 165, 1),
             prefixIconColor: kPrimaryColor,
             contentPadding: EdgeInsets.symmetric(
                 horizontal: defaultPadding, vertical: defaultPadding),

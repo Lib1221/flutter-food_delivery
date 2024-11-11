@@ -25,12 +25,9 @@ class A extends StatefulWidget {
 
 class _AState extends State<A> {
   CollectionReference _db = FirebaseFirestore.instance.collection(nav_items[0]);
-
   CollectionReference cart = FirebaseFirestore.instance.collection('cart');
 
 // Function to get the document ID from the cart based on item name
-
-
 
   Future<void> getCartItemIdByName(String itemName, int new_amount) async {
     try {
@@ -61,6 +58,24 @@ class _AState extends State<A> {
       }
     } catch (e) {
       print(e.toString());
+    }
+  }
+
+  Future<bool> addCardByName(String itemName) async {
+    try {
+      QuerySnapshot cartSnapshot = await FirebaseFirestore.instance
+          .collection('cart')
+          .where('Name', isEqualTo: itemName)
+          .get();
+
+      if (cartSnapshot.docs.isNotEmpty) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      print(e.toString());
+      return false;
     }
   }
 
@@ -181,11 +196,7 @@ class _AState extends State<A> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        TextButton(
-                                          onPressed: () {
-                                            Navigator.pushNamed(
-                                                context, '/detailview');
-                                          },
+                                        Expanded(
                                           child: Text(
                                             doc['Name'], // Use data from Firestore
                                             style: const TextStyle(
@@ -219,8 +230,11 @@ class _AState extends State<A> {
                                 Column(
                                   children: [
                                     IconButton(
-                                      onPressed: () {
-                                        if (doc['Amount'] == 0) {
+                                      onPressed: () async {
+                                        if (await addCardByName(doc['Name'])) {
+                                          getCartItemIdByName(
+                                              doc['Name'], doc['Amount']+1);
+                                        } else {
                                           List<Cart_instances> adding = [
                                             Cart_instances(
                                                 Name: doc['Name'],
@@ -230,10 +244,8 @@ class _AState extends State<A> {
                                                 Amount: doc['Amount'] + 1)
                                           ];
                                           cart.add(adding[0].toJson());
-                                        } else {
-                                          getCartItemIdByName(
-                                              doc['Name'], doc['Amount'] + 1);
                                         }
+
                                         _incrementCounter(doc.id);
                                       },
                                       iconSize: 40,

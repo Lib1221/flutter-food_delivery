@@ -1,8 +1,8 @@
 
+import 'package:check/new.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:check/main.dart';
-import 'package:check/second.dart';
 import 'package:provider/provider.dart';
 
 class Wrapper1 extends StatelessWidget {
@@ -16,7 +16,7 @@ class Wrapper1 extends StatelessWidget {
         if (user == null) {
           return const MyApp2();  // Show authentication screen when user is not signed in
         } else {
-          return const homepage();  // Show the home screen when user is signed in
+          return const mainpage();  // Show the home screen when user is signed in
         }
   }
 }

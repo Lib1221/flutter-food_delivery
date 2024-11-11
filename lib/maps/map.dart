@@ -8,7 +8,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'Authservice/shared/loading.dart';
+import '../Authservice/shared/loading.dart';
 
 class deliveryRoute extends StatefulWidget {
   const deliveryRoute({Key? key}) : super(key: key);
@@ -144,7 +144,6 @@ class _deliveryRoutestate extends State<deliveryRoute> {
                 ),
               ],
             ),
-            floatingActionButton: ButtonNavBar3(),
 
           )
           
