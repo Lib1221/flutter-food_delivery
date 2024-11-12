@@ -57,7 +57,7 @@ class MyApp2 extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               elevation: 0,
               foregroundColor: Colors.white,
-              backgroundColor: const Color(0xFF6F35A5),
+              backgroundColor: const Color.fromARGB(255, 111, 53, 165),
               shape: const StadiumBorder(),
               maximumSize: const Size(double.infinity, 56),
               minimumSize: const Size(double.infinity, 56),
@@ -65,8 +65,8 @@ class MyApp2 extends StatelessWidget {
           ),
           inputDecorationTheme: const InputDecorationTheme(
             filled: true,
-            fillColor: Color(0xFFF1E6FF),
-            iconColor: Color.fromRGBO(111, 53, 165, 1),
+            fillColor: Color.fromARGB(255, 241, 230, 255),
+            iconColor: Color.fromARGB(255, 111, 53, 165),
             prefixIconColor: kPrimaryColor,
             contentPadding: EdgeInsets.symmetric(
                 horizontal: defaultPadding, vertical: defaultPadding),
