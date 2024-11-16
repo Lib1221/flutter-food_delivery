@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import 'package:check/map.dart';
 import 'package:check/second.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+=======
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:food_delivry/map.dart';
+import 'package:food_delivry/second.dart';
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
 
 class ButtonNavBar3 extends StatefulWidget {
   const ButtonNavBar3({super.key});

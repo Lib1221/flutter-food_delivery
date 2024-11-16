@@ -1,6 +1,10 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'package:food_delivry/common.dart';
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
 
 
 class ImageGalleryPage extends StatefulWidget {
@@ -115,6 +119,10 @@ class _ImageGalleryPageState extends State<ImageGalleryPage> {
 
 
       ),
+<<<<<<< HEAD
+=======
+      bottomNavigationBar: ButtonNavBar3(),
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
     
     
   

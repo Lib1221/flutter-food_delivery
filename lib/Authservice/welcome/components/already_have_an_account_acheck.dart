@@ -1,7 +1,11 @@
 // ignore_for_file: use_super_parameters
 
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import '../constants.dart';
+=======
+import 'package:food_delivry/Authservice/welcome/constants.dart';
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
 
 
 class AlreadyHaveAnAccountCheck extends StatelessWidget {

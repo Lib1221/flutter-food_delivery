@@ -1,10 +1,18 @@
 // ignore_for_file: camel_case_types
 
+<<<<<<< HEAD
 import 'package:check/common.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'Authservice/auth.dart';
 import 'a.dart';
+=======
+import 'package:flutter/material.dart';
+import 'package:food_delivry/Authservice/auth.dart';
+import 'package:food_delivry/a.dart';
+import 'package:food_delivry/common.dart';
+import 'package:lottie/lottie.dart';
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
 
 class homepage extends StatefulWidget {
   const homepage({super.key});
@@ -23,7 +31,11 @@ class _homepageState extends State<homepage> {
         backgroundColor: Colors.redAccent,
         title: const Text('MesobXpress',
             style: TextStyle(
+<<<<<<< HEAD
                 fontSize: 30,
+=======
+                fontSize: 40,
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
                 fontWeight: FontWeight.bold,
                 color: Colors.white)),
         actions: [

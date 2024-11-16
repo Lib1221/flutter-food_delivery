@@ -1,14 +1,27 @@
+<<<<<<< HEAD
 // ignore_for_file: prefer_const_constructors, deprecated_member_use, depend_on_referenced_packages, use_super_parameters, camel_case_types, prefer_const_declarations
 
 import 'package:check/common.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+=======
+// ignore_for_file: prefer_const_constructors, deprecated_member_use, depend_on_referenced_packages, use_super_parameters, camel_case_types
+
+import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+import 'package:food_delivry/Authservice/shared/loading.dart';
+import 'package:food_delivry/common.dart';
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+<<<<<<< HEAD
 import 'Authservice/shared/loading.dart';
+=======
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
 
 class deliveryRoute extends StatefulWidget {
   const deliveryRoute({Key? key}) : super(key: key);
@@ -105,7 +118,11 @@ class _deliveryRoutestate extends State<deliveryRoute> {
         ? Loading()
         : Scaffold(
           appBar: AppBar(
+<<<<<<< HEAD
             title: Text("$time ${distance}m"),
+=======
+            title: Text(time+" "+distance+"m"),
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
             centerTitle: true,
           ),
             body: FlutterMap(
@@ -143,7 +160,11 @@ class _deliveryRoutestate extends State<deliveryRoute> {
                 ),
               ],
             ),
+<<<<<<< HEAD
             bottomNavigationBar: ButtonNavBar3(),
+=======
+          bottomNavigationBar:ButtonNavBar3(),
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
 
           )
           

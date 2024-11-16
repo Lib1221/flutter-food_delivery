@@ -41,6 +41,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
+<<<<<<< HEAD
     apiKey: 'AIzaSyCRBiw2qy0zxPr3B7JsXewBYhjvg0NIm4I',
     appId: '1:245496442140:web:131c089a557271cb0a1ed9',
     messagingSenderId: '245496442140',
@@ -84,6 +85,51 @@ class DefaultFirebaseOptions {
     projectId: 'mesobexpress-49e5d',
     authDomain: 'mesobexpress-49e5d.firebaseapp.com',
     storageBucket: 'mesobexpress-49e5d.firebasestorage.app',
+=======
+    apiKey: 'AIzaSyDUZA0TSh8ejZvu6Ylh11h-_ssnytpPO9c',
+    appId: '1:206859963118:web:20f420a970c31f7c4b41ff',
+    messagingSenderId: '206859963118',
+    projectId: 'just-something-2c761',
+    authDomain: 'just-something-2c761.firebaseapp.com',
+    storageBucket: 'just-something-2c761.appspot.com',
+  );
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyBUBk5RL8_S-e44541DLjcF5YDBkwcqKec',
+    appId: '1:206859963118:android:21f6ccce093584134b41ff',
+    messagingSenderId: '206859963118',
+    projectId: 'just-something-2c761',
+    storageBucket: 'just-something-2c761.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyBlo79k6v5r-ciYGfik-XdXnvzByKlCHz4',
+    appId: '1:206859963118:ios:0e2f9a1cb89edb404b41ff',
+    messagingSenderId: '206859963118',
+    projectId: 'just-something-2c761',
+    storageBucket: 'just-something-2c761.appspot.com',
+    iosClientId: '206859963118-0fid2pa8tru0g6hpj1mm9h8p85ekmam1.apps.googleusercontent.com',
+    iosBundleId: 'com.example.foodDelivry',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyBlo79k6v5r-ciYGfik-XdXnvzByKlCHz4',
+    appId: '1:206859963118:ios:0e2f9a1cb89edb404b41ff',
+    messagingSenderId: '206859963118',
+    projectId: 'just-something-2c761',
+    storageBucket: 'just-something-2c761.appspot.com',
+    iosClientId: '206859963118-0fid2pa8tru0g6hpj1mm9h8p85ekmam1.apps.googleusercontent.com',
+    iosBundleId: 'com.example.foodDelivry',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyDUZA0TSh8ejZvu6Ylh11h-_ssnytpPO9c',
+    appId: '1:206859963118:web:9ecee615c0cb97aa4b41ff',
+    messagingSenderId: '206859963118',
+    projectId: 'just-something-2c761',
+    authDomain: 'just-something-2c761.firebaseapp.com',
+    storageBucket: 'just-something-2c761.appspot.com',
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
   );
 
 }

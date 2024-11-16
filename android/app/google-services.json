@@ -1,32 +1,53 @@
 {
   "project_info": {
+<<<<<<< HEAD
     "project_number": "245496442140",
     "project_id": "mesobexpress-49e5d",
     "storage_bucket": "mesobexpress-49e5d.firebasestorage.app"
+=======
+    "project_number": "206859963118",
+    "project_id": "just-something-2c761",
+    "storage_bucket": "just-something-2c761.appspot.com"
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
   },
   "client": [
     {
       "client_info": {
+<<<<<<< HEAD
         "mobilesdk_app_id": "1:245496442140:android:381b19ab4639c3ae0a1ed9",
         "android_client_info": {
           "package_name": "com.example.check"
+=======
+        "mobilesdk_app_id": "1:206859963118:android:21f6ccce093584134b41ff",
+        "android_client_info": {
+          "package_name": "com.MesobExpress.app"
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
         }
       },
       "oauth_client": [
         {
+<<<<<<< HEAD
           "client_id": "245496442140-khf1qs2vcgse9hmmj3pipv3cbmeqp7vm.apps.googleusercontent.com",
+=======
+          "client_id": "206859963118-tpbp10s6pceeo348p3tjpdcf8hd19upa.apps.googleusercontent.com",
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
           "client_type": 3
         }
       ],
       "api_key": [
         {
+<<<<<<< HEAD
           "current_key": "AIzaSyA7R6ZH-ZZ88R_cpUwYj12yykEWJB0pmUI"
+=======
+          "current_key": "AIzaSyBUBk5RL8_S-e44541DLjcF5YDBkwcqKec"
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
+<<<<<<< HEAD
               "client_id": "245496442140-khf1qs2vcgse9hmmj3pipv3cbmeqp7vm.apps.googleusercontent.com",
               "client_type": 3
             },
@@ -35,6 +56,16 @@
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.example.mesob"
+=======
+              "client_id": "206859963118-tpbp10s6pceeo348p3tjpdcf8hd19upa.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "206859963118-0fid2pa8tru0g6hpj1mm9h8p85ekmam1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.foodDelivry"
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
               }
             }
           ]
@@ -43,26 +74,41 @@
     },
     {
       "client_info": {
+<<<<<<< HEAD
         "mobilesdk_app_id": "1:245496442140:android:4157df75ba45e6800a1ed9",
         "android_client_info": {
           "package_name": "com.mesobexpress.app"
+=======
+        "mobilesdk_app_id": "1:206859963118:android:b4ad1df2916425814b41ff",
+        "android_client_info": {
+          "package_name": "com.example.just_something"
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
         }
       },
       "oauth_client": [
         {
+<<<<<<< HEAD
           "client_id": "245496442140-khf1qs2vcgse9hmmj3pipv3cbmeqp7vm.apps.googleusercontent.com",
+=======
+          "client_id": "206859963118-tpbp10s6pceeo348p3tjpdcf8hd19upa.apps.googleusercontent.com",
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
           "client_type": 3
         }
       ],
       "api_key": [
         {
+<<<<<<< HEAD
           "current_key": "AIzaSyA7R6ZH-ZZ88R_cpUwYj12yykEWJB0pmUI"
+=======
+          "current_key": "AIzaSyBUBk5RL8_S-e44541DLjcF5YDBkwcqKec"
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
+<<<<<<< HEAD
               "client_id": "245496442140-khf1qs2vcgse9hmmj3pipv3cbmeqp7vm.apps.googleusercontent.com",
               "client_type": 3
             },
@@ -71,6 +117,16 @@
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.example.mesob"
+=======
+              "client_id": "206859963118-tpbp10s6pceeo348p3tjpdcf8hd19upa.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "206859963118-0fid2pa8tru0g6hpj1mm9h8p85ekmam1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.foodDelivry"
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
               }
             }
           ]

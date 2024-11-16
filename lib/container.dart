@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // ignore_for_file: non_constant_identifier_names, camel_case_types
+=======
+// ignore_for_file: non_constant_identifier_names
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
 import 'package:flutter/material.dart';
 int selector_item = 1;
 class softDrink {
@@ -71,6 +75,7 @@ class _MyWidgetState extends State<MyWidget> {
       pizzaThingBank,
     ];
 
+<<<<<<< HEAD
     return ListView.builder(
       itemCount: nav_items[selector_item].length,
       itemBuilder: (context, index) {
@@ -157,6 +162,96 @@ class _MyWidgetState extends State<MyWidget> {
           ),
         );
       },
+=======
+    return Container(
+      child: ListView.builder(
+        itemCount: nav_items[selector_item].length,
+        itemBuilder: (context, index) {
+          return Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                  12), // Rounded corners for a modern look
+              side: const BorderSide(
+                color: Colors.redAccent, // Border color: Tomato Red
+                width: 2, // Border width: 2 for more visibility
+              ),
+            ),
+            color: const Color(0xFFFFF8E7),
+            child: Container(
+              padding: const EdgeInsets.all(5),
+              margin: const EdgeInsets.all(10),
+              child: SizedBox(
+                height: 100,
+                child: Row(
+                  children: [
+                    Image.asset(
+                      nav_items[selector_item][index].ImageAddress,
+                      fit: BoxFit.cover,
+                      height: 100,
+                    ),
+                    Expanded(
+                        flex: 2,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 0, horizontal: 15),
+                          margin: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: const Color(0xFFFFDAB9),
+                          ),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                flex: 7,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pushNamed(
+                                            context, '/detailview');
+                                      },
+                                      child: Text(
+                                        nav_items[selector_item][index].Name,
+                                        style: const TextStyle(
+                                          color: Colors.black87,
+                                          fontSize: 23,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                    const Text(
+                                      "300-birr",
+                                      style: TextStyle(
+                                        color: Colors.black54,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                  flex: 2,
+                                  child: IconButton(
+                                      onPressed: () {},
+                                      hoverColor: Colors.grey,
+                                      icon: const Icon(
+                                        Icons.add_box_outlined,
+                                        size: 40,
+                                        color: Colors.black,
+                                      )))
+                            ],
+                          ),
+                        )),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
     );
   }
 }

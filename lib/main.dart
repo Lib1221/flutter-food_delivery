@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -17,6 +18,23 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
 );
 
+=======
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:food_delivry/Authservice/auth.dart';
+import 'package:food_delivry/Authservice/welcome/Screens/Welcome/welcome_screen.dart';
+import 'package:food_delivry/Authservice/welcome/constants.dart';
+import 'package:food_delivry/Authservice/wrapper.dart';
+import 'package:food_delivry/firebase_options.dart';
+import 'package:provider/provider.dart';
+
+void main() async {
+  
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: MyApp(),

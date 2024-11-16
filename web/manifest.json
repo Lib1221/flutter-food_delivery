@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "check",
     "short_name": "check",
+=======
+    "name": "food_delivry",
+    "short_name": "food_delivry",
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

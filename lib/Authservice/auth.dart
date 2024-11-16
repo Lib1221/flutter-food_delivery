@@ -56,7 +56,10 @@ class AuthService {
       return null;
     }
   }
+<<<<<<< HEAD
   
+=======
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
   Future<UserCredential> signInWithGoogle() async {
   // Create a new provider
   GoogleAuthProvider googleProvider = GoogleAuthProvider();
@@ -73,4 +76,10 @@ class AuthService {
   // return await FirebaseAuth.instance.signInWithRedirect(googleProvider);
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
 }

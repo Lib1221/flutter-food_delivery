@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 // ignore_for_file: camel_case_types
 
+=======
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
 import 'package:flutter/material.dart';
 
 class auth extends StatefulWidget {

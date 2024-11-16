@@ -1,5 +1,6 @@
 plugins {
     id "com.android.application"
+<<<<<<< HEAD
     id 'com.google.gms.google-services'
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
@@ -26,6 +27,18 @@ if (flutterVersionName == null) {
 
 android {
     namespace = "com.example.check"
+=======
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.just_something"
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
     compileSdk = 34
     ndkVersion = flutter.ndkVersion
 
@@ -40,7 +53,11 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+<<<<<<< HEAD
         applicationId = "com.example.check"
+=======
+        applicationId = "com.example.just_something"
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = 23
@@ -64,4 +81,17 @@ flutter {
 
 
 
+<<<<<<< HEAD
 dependencies {}
+=======
+
+// Firebase and Google Services configuration
+dependencies {
+    implementation platform('com.google.firebase:firebase-bom:32.2.2') // Firebase BOM, check for latest version
+    implementation 'com.google.firebase:firebase-analytics-ktx' // Add Firebase dependencies as needed
+    // Add other Firebase services if needed, like Firestore or Auth
+}
+
+// Apply Google Services JSON file
+apply plugin: 'com.google.gms.google-services'
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a

@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 // ignore_for_file: avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 import '../../../../auth.dart';
 import '../../../../shared/loading.dart';
+=======
+import 'package:flutter/material.dart';
+import 'package:food_delivry/Authservice/auth.dart';
+import 'package:food_delivry/Authservice/shared/loading.dart';
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
 
 
 import '../../../components/already_have_an_account_acheck.dart';
@@ -85,6 +91,11 @@ class _LoginFormState extends State<LoginForm> {
                         const SnackBar(content: Text('Please enter valid data!')),
                       );
                     });
+<<<<<<< HEAD
+=======
+                  } else {
+                    print("you logged in");
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
                   }
                 }
               },

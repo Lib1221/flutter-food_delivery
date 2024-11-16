@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:check/Authservice/welcome/constants.dart';
+=======
+import 'package:food_delivry/Authservice/welcome/constants.dart';
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
 
 class OrDivider extends StatelessWidget {
   const OrDivider({super.key});

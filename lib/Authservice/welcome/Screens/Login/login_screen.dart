@@ -3,7 +3,11 @@
 // ignore_for_file: must_be_immutable, use_super_parameters
 
 import 'package:flutter/widgets.dart';
+<<<<<<< HEAD
 import '../../responsive.dart';
+=======
+import 'package:food_delivry/Authservice/welcome/responsive.dart';
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
 
 import '../../components/background.dart';
 import 'components/login_form.dart';

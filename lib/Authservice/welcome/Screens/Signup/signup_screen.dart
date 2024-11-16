@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'components/signup_form.dart';
 import 'components/socal_sign_up.dart';
 import '../../constants.dart';
 import '../../responsive.dart';
+=======
+import 'package:food_delivry/Authservice/welcome/Screens/Signup/components/signup_form.dart';
+import 'package:food_delivry/Authservice/welcome/Screens/Signup/components/socal_sign_up.dart';
+import 'package:food_delivry/Authservice/welcome/constants.dart';
+import 'package:food_delivry/Authservice/welcome/responsive.dart';
+>>>>>>> 531ceb1893ed0a4ad86901d9c7e15b3d9352732a
 import '../../components/background.dart';
 import 'components/sign_up_top_image.dart';
 
