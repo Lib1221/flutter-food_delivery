@@ -1,6 +1,5 @@
 // ignore_for_file: camel_case_types
 
-import 'package:check/common.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'Authservice/auth.dart';

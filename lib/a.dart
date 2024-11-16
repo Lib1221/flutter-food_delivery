@@ -173,7 +173,7 @@ class _AState extends State<A> {
                               children: [
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(10),
-                                  child: Image.asset(
+                                  child: Image.network(
                                     doc["ImageAddress"], // Use data from Firestore
                                     fit: BoxFit.cover,
                                     height: 120,

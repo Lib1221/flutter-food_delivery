@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors, deprecated_member_use, depend_on_referenced_packages, use_super_parameters, camel_case_types, prefer_const_declarations
 
-import 'package:check/common.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';

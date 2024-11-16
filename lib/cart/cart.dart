@@ -90,7 +90,7 @@ class _CartsState extends State<Carts> {
                             children: [
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
-                                child: Image.asset(
+                                child: Image.network(
                                   doc["ImageAddress"],
                                   fit: BoxFit.cover,
                                   height: 120,
