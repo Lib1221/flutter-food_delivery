@@ -21,13 +21,4 @@ This Flutter application is a food ordering platform that allows users to browse
   - **Cloud Firestore**: For storing food categories and order details.
 - **Stripe**: For handling secure payments.
 - **Dio**: For making HTTP requests to APIs.
-- **Google Maps API** (or similar): For displaying maps and handling location-related features.
-
-## Installation
-
-To run this app locally, follow these steps:
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+- **openstreetMaps API** (or similar): For displaying maps and handling location-related features.
