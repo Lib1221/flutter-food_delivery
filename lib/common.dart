@@ -20,7 +20,7 @@ class ButtonNavBar3 extends StatelessWidget {
       margin: const EdgeInsets.all(10),
       height: screenWidth * .155,
       decoration: BoxDecoration(
-        color: Colors.transparent,
+        color: Color(0xFF673AB7), // Bottom Navbar Background Color (Deep Purple)
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(.15),
@@ -33,7 +33,7 @@ class ButtonNavBar3 extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(50),
         child: Container(
-          color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.8),
+          color: Color(0xFFFFFFFF).withOpacity(0.8), // Background for icons (White with opacity)
           child: ListView.builder(
             itemCount: listOfIcons.length,
             scrollDirection: Axis.horizontal,
@@ -54,7 +54,7 @@ class ButtonNavBar3 extends StatelessWidget {
                         width: index == currentIndex ? screenWidth * .2125 : 0,
                         decoration: BoxDecoration(
                           color:
-                              index == currentIndex ? Colors.blueAccent.withOpacity(.2) : Colors.transparent,
+                          index == currentIndex ? Color(0xFF00796B).withOpacity(0.2) : Colors.transparent, // Teal for selected tab indicator
                           borderRadius: BorderRadius.circular(50),
                         ),
                       ),
@@ -67,7 +67,7 @@ class ButtonNavBar3 extends StatelessWidget {
                       listOfIcons[index],
                       size: screenWidth * .076,
                       color:
-                          index == currentIndex ? const Color.fromARGB(255, 4, 96, 171) : Colors.black,
+                      index == currentIndex ? Color(0xFFFFFFFF) : Color(0xFF000000), // White for selected icon, Black for unselected
                     ),
                   ),
                 ],

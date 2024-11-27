@@ -53,6 +53,13 @@ class MyApp2 extends StatelessWidget {
       theme: ThemeData(
           primaryColor: kPrimaryColor,
           scaffoldBackgroundColor: Colors.white,
+
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: Colors.red, // Background color of the Bottom Navigation Bar
+          selectedItemColor: Colors.blue, // Color for the selected item
+          unselectedItemColor: Colors.grey, // Color for unselected items
+          elevation: 5, // Shadow elevation
+        ),
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
               elevation: 0,

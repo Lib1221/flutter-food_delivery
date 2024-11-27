@@ -121,9 +121,8 @@ class _AState extends State<A> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Colors.orange.shade100,
-              Colors.orange.shade200,
-              Colors.orange.shade300
+              Color.fromARGB(255, 255, 87, 34), // ARGB color for start (e.g., orange)
+              Color.fromARGB(255, 33, 150, 243), // ARGB color for end (e.g., blue)
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -159,12 +158,13 @@ class _AState extends State<A> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15),
                           side: const BorderSide(
-                              color: Colors.redAccent, width: 1.5),
+                            color: Color(0xFFBDBDBD), // Light Grey Border
+                            width: 1.5,
+                          ),
                         ),
-                        elevation: 5,
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 10, horizontal: 15),
-                        color: const Color(0xFFFFF8E7),
+                        elevation: 5, // Moderate elevation
+                        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                        color: const Color(0xFFFFFFFF), // White Background for the card
                         child: Container(
                           padding: const EdgeInsets.all(10),
                           child: SizedBox(
@@ -183,24 +183,21 @@ class _AState extends State<A> {
                                 Expanded(
                                   flex: 3,
                                   child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 15),
+                                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                                     margin: const EdgeInsets.only(left: 10),
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
-                                      color: Colors.white,
+                                      color: Colors.white, // Inner container color
                                     ),
                                     child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Expanded(
                                           child: Text(
                                             doc['Name'], // Use data from Firestore
                                             style: const TextStyle(
-                                              color: Colors.black87,
+                                              color: Color(0xFF424242), // Dark Grey for text
                                               fontSize: 20,
                                               fontWeight: FontWeight.bold,
                                             ),
@@ -209,8 +206,9 @@ class _AState extends State<A> {
                                         Text(
                                           '\$${doc['Price'].toString()}', // Use data from Firestore
                                           style: const TextStyle(
-                                              color: Colors.black54,
-                                              fontSize: 18),
+                                            color: Color(0xFF757575), // Grey for price text
+                                            fontSize: 18,
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -220,10 +218,8 @@ class _AState extends State<A> {
                                   flex: 1,
                                   child: Center(
                                     child: Text(
-                                      doc['Amount']
-                                          .toString(), // Use data from Firestore
-                                      style: const TextStyle(
-                                          color: Colors.black54, fontSize: 18),
+                                      doc['Amount'].toString(), // Use data from Firestore
+                                      style: const TextStyle(color: Color(0xFF757575), fontSize: 18), // Grey for amount text
                                     ),
                                   ),
                                 ),
@@ -232,16 +228,16 @@ class _AState extends State<A> {
                                     IconButton(
                                       onPressed: () async {
                                         if (await addCardByName(doc['Name'])) {
-                                          getCartItemIdByName(
-                                              doc['Name'], doc['Amount']+1);
+                                          getCartItemIdByName(doc['Name'], doc['Amount'] + 1);
                                         } else {
                                           List<Cart_instances> adding = [
                                             Cart_instances(
                                                 Name: doc['Name'],
                                                 Price: doc['Price'],
                                                 ImageAddress:
-                                                    doc['ImageAddress'],
-                                                Amount: doc['Amount'] + 1)
+                                                doc['ImageAddress'],
+                                                Amount:
+                                                doc['Amount'] + 1)
                                           ];
                                           cart.add(adding[0].toJson());
                                         }
@@ -249,8 +245,8 @@ class _AState extends State<A> {
                                         _incrementCounter(doc.id);
                                       },
                                       iconSize: 40,
-                                      icon: const Icon(Icons.add_box_outlined,
-                                          color: Colors.black),
+                                      icon:
+                                      const Icon(Icons.add_box_outlined, color: Colors.black),
                                     ),
                                     IconButton(
                                       onPressed: () {
@@ -258,9 +254,8 @@ class _AState extends State<A> {
                                         removeCardByName(doc['Name']);
                                       },
                                       iconSize: 40,
-                                      icon: const Icon(
-                                          Icons.restart_alt_outlined,
-                                          color: Colors.black),
+                                      icon:
+                                      const Icon(Icons.restart_alt_outlined, color: Colors.black),
                                     )
                                   ],
                                 )
@@ -280,6 +275,7 @@ class _AState extends State<A> {
     );
   }
 }
+
 
 class FoodSelectionRow extends StatelessWidget {
   final bool softDrinkTrue;
