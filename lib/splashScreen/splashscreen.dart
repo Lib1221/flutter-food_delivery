@@ -17,7 +17,7 @@ class _SplashState extends State<Splash> {
       body: AnimatedSplashScreen(
         centered: true,
         splashIconSize: 900,
-        duration: 2000,
+        duration: 10,
         splash:SvgPicture.asset('assets/icons/splash.svg',
           fit: BoxFit.fill,
           

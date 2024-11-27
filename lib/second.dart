@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'Authservice/auth.dart';
 import 'a.dart';
+import 'new.dart';
 
 class homepageScreening extends StatefulWidget {
   const homepageScreening({super.key});
@@ -17,15 +18,16 @@ class homepageScreenState extends State<homepageScreening> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:Colors.orange[400],
+
       appBar: AppBar(
         elevation: 4,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color(0xFF0D47A1) ,
         title: const Text('MesobXpress',
             style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Colors.black)),
+                color: Color(0xFFE1F5FE) // Light Blue
+            )),
         actions: [
           Padding(
             padding: const EdgeInsets.all(10),
@@ -64,8 +66,7 @@ class homepageScreenState extends State<homepageScreening> {
         ],
         
       ),
-   
-      
+
     );
   }
 }
