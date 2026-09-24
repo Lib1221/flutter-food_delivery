@@ -22,3 +22,11 @@ This Flutter application is a food ordering platform that allows users to browse
 - **Stripe**: For handling secure payments.
 - **Dio**: For making HTTP requests to APIs.
 - **openstreetMaps API** (or similar): For displaying maps and handling location-related features.
+
+## Documentation
+
+Developer docs live in [`docs/`](docs/):
+
+- [Architecture](docs/ARCHITECTURE.md)
+- [Setup](docs/SETUP.md)
+- [Contributing](docs/CONTRIBUTING.md)
